@@ -42,6 +42,8 @@
 	// Init the window
 	window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	
+	[window setMultipleTouchEnabled:YES];
+	
 	// Try to use CADisplayLink director
 	// if it fails (SDK < 3.1) use the default director
 	if( ! [CCDirector setDirectorType:kCCDirectorTypeDisplayLink] )
@@ -65,6 +67,8 @@
 								   depthFormat:0						// GL_DEPTH_COMPONENT16_OES
 						];
 	
+	[glView setMultipleTouchEnabled:YES];
+
 	// attach the openglView to the director
 	[director setOpenGLView:glView];
 	

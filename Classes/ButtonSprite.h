@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 #import "ShieldSprite.h"
 
-@interface ButtonSprite : CCSprite <CCTargetedTouchDelegate> {
+@interface ButtonSprite : CCSprite <CCStandardTouchDelegate> {
 	ShieldSprite *shield;
 }
 

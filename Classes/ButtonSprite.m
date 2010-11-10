@@ -14,7 +14,7 @@
 
 - (void)onEnter
 {
-	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+	[[CCTouchDispatcher sharedDispatcher] addStandardDelegate:self priority:0];
 	[super onEnter];
 }
 
@@ -28,39 +28,45 @@
 #pragma mark -
 #pragma mark CCTargetedTouchDelegate
 
-- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+-(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	CGRect rect = CGRectMake(position_.x-(contentSize_.width/2), (position_.y-(contentSize_.height/2)), contentSize_.width, contentSize_.height);
-	CGPoint p = [self convertTouchToNodeSpaceAR:touch];
-	CGPoint wp = [self convertToWorldSpaceAR:p];
-	
-	if(CGRectContainsPoint(rect, wp)) {
-		NSLog(@"Button with tag %d pushed",self.tag);
-		if (self.shield) {
-			[self.parent addChild:self.shield z:2];
+	for (UITouch *touch in touches) {
+
+		CGRect rect = CGRectMake(position_.x-(contentSize_.width/2), (position_.y-(contentSize_.height/2)), contentSize_.width, contentSize_.height);
+		CGPoint p = [self convertTouchToNodeSpaceAR:touch];
+		CGPoint wp = [self convertToWorldSpaceAR:p];
+		
+		if(CGRectContainsPoint(rect, wp)) {
+			NSLog(@"Button with tag %d pushed, touch count is %d, %u",self.tag, [touches count], [touch hash]);
+			if (self.shield) {
+				[self.parent addChild:self.shield z:2];
+			}
+
 		}
-		return YES;
 	}
-	return NO;
 }
 
-- (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+- (void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	NSLog(@"Button with tag %d moved",self.tag);
+	//for (UITouch *touch in touches) {
+//		NSLog(@"Button with tag %d moved count is %d",self.tag, [touches count]);
+//	}
 
 }
 
-- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+- (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	NSLog(@"Button with tag %d ended",self.tag);
+	for (UITouch *touch in touches) {
+		NSLog(@"Button with tag %d ended, %u",self.tag, [touch hash]);
 	if (self.shield) {
 		[self.parent removeChild:self.shield cleanup: YES];
 	}
+	}
 	
 
 }
 
-- (void)ccTouchCancelled:(UITouch *)touch withEvent:(UIEvent *)event
+- (void)ccTouchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	NSLog(@"Button with tag %d canceled",self.tag);
 }
