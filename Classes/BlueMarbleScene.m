@@ -10,6 +10,7 @@
 #import "BlueMarbleScene.h"
 #import "cocos2d.h"
 #import "ShipSprite.h"
+#import "ButtonSprite.h"
 
 // BlueMarbleScene implementation
 @implementation BlueMarbleScene
@@ -38,9 +39,9 @@
 		
 		// create and initialize our Background
 		CCSprite * earth = [CCSprite spriteWithFile:@"Earth.png"];
-		CCSprite * blueButton = [CCSprite spriteWithFile:@"BlueButton.png"];
-		CCSprite * redButton = [CCSprite spriteWithFile:@"RedButton.png"];
-		CCSprite * greenButton = [CCSprite spriteWithFile:@"GreenButton.png"];
+		ButtonSprite * blueButton = [CCSprite spriteWithFile:@"BlueButton.png"];
+		ButtonSprite * redButton = [CCSprite spriteWithFile:@"RedButton.png"];
+		ButtonSprite * greenButton = [CCSprite spriteWithFile:@"GreenButton.png"];
 		
 		// ask director the the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];

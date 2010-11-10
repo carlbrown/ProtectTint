@@ -1,15 +1,15 @@
 //
-//  ShipSprite.m
+//  ButtonSprite.m
 //  ProtectTint
 //
 //  Created by Carl Brown on 11/9/10.
 //  Copyright 2010 PDAgent, LLC. All rights reserved.
 //
 
-#import "ShipSprite.h"
+#import "ButtonSprite.h"
 
 
-@implementation ShipSprite
+@implementation ButtonSprite
 
 - (void)onEnter
 {
@@ -50,6 +50,5 @@
 - (void)ccTouchCancelled:(UITouch *)touch withEvent:(UIEvent *)event
 {
 }
-
 
 @end
