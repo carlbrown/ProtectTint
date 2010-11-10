@@ -85,6 +85,7 @@
 		D33B35EB128A6B8D00C2583E /* RedShield.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B35E5128A6B8D00C2583E /* RedShield.png */; };
 		D33B35EC128A6B8D00C2583E /* RedShield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B35E6128A6B8D00C2583E /* RedShield@2x.png */; };
 		D33B35F1128A6CB000C2583E /* ShieldSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = D33B35F0128A6CB000C2583E /* ShieldSprite.m */; };
+		D33B3659128A82EC00C2583E /* GravityBelt.m in Sources */ = {isa = PBXBuildFile; fileRef = D33B3658128A82EC00C2583E /* GravityBelt.m */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
 		DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */; };
@@ -359,6 +360,8 @@
 		D33B35E6128A6B8D00C2583E /* RedShield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "RedShield@2x.png"; path = "ArtWork/RedShield@2x.png"; sourceTree = SOURCE_ROOT; };
 		D33B35EF128A6CB000C2583E /* ShieldSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShieldSprite.h; sourceTree = "<group>"; };
 		D33B35F0128A6CB000C2583E /* ShieldSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShieldSprite.m; sourceTree = "<group>"; };
+		D33B3657128A82EC00C2583E /* GravityBelt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravityBelt.h; sourceTree = "<group>"; };
+		D33B3658128A82EC00C2583E /* GravityBelt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravityBelt.m; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -643,6 +646,8 @@
 				D33B34BA128A5BB600C2583E /* ButtonSprite.m */,
 				D33B35EF128A6CB000C2583E /* ShieldSprite.h */,
 				D33B35F0128A6CB000C2583E /* ShieldSprite.m */,
+				D33B3657128A82EC00C2583E /* GravityBelt.h */,
+				D33B3658128A82EC00C2583E /* GravityBelt.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1221,6 +1226,7 @@
 				D33B34A8128A5B0600C2583E /* ShipSprite.m in Sources */,
 				D33B34BB128A5BB600C2583E /* ButtonSprite.m in Sources */,
 				D33B35F1128A6CB000C2583E /* ShieldSprite.m in Sources */,
+				D33B3659128A82EC00C2583E /* GravityBelt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

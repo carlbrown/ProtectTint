@@ -11,16 +11,4 @@
 
 @implementation ShieldSprite
 
-- (void)onEnter
-{
-	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
-	[super onEnter];
-}
-
-- (void)onExit
-{
-	[[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
-	[super onExit];
-}
-
 @end

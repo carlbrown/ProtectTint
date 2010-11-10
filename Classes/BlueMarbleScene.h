@@ -8,14 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "GravityBelt.h"
 
 // BlueMarbleScene Layer
 @interface BlueMarbleScene : CCLayer
 {
+	GravityBelt *gbelt;
 }
+
+@property (nonatomic, retain) GravityBelt *gbelt;
 
 // returns a Scene that contains the BlueMarbleScene as the only child
 +(id) scene;
+
 
 @end
 

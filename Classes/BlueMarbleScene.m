@@ -16,6 +16,8 @@
 // BlueMarbleScene implementation
 @implementation BlueMarbleScene
 
+@synthesize gbelt;
+
 +(id) scene
 {
 	// 'scene' is an autorelease object.
@@ -71,8 +73,8 @@
 		CCSpriteBatchNode *shipList = [CCSpriteBatchNode batchNodeWithFile:@"SpaceShips.png"];
 		[self addChild:shipList z:0 tag:99];
 		
-		ShipSprite *ship = [[ShipSprite alloc] initWithBatchNode:shipList rect:CGRectMake(0, 0, 60, 36)];
-		ship.position = ccp(size.width/2, size.height-50);
+//		ShipSprite *ship = [[ShipSprite alloc] initWithBatchNode:shipList rect:CGRectMake(0, 0, 60, 36)];
+//		ship.position = ccp(size.width/2, size.height-50);
 		
 		// add the label as a child to this Layer
 		[self addChild: earth z:-1];
@@ -80,11 +82,14 @@
 		[self addChild: redButton z:1];
 		[self addChild: greenButton z:1];
 		
-		id moveDownAction = [CCMoveTo actionWithDuration:2.0f position:ccp(size.width/2, 50.0)];
-		id blockMoveSeq = [CCSequence actions: moveDownAction, nil];
-		id spawnaction = [CCSpawn actions: blockMoveSeq, nil];
-		[ship runAction:[CCRepeatForever actionWithAction:spawnaction]];
-		[shipList addChild:ship];	
+//		id moveDownAction = [CCMoveTo actionWithDuration:2.0f position:ccp(size.width/2, 50.0)];
+//		id blockMoveSeq = [CCSequence actions: moveDownAction, nil];
+//		id spawnaction = [CCSpawn actions: blockMoveSeq, nil];
+//		[ship runAction:[CCRepeatForever actionWithAction:spawnaction]];
+//		[shipList addChild:ship];	
+		
+		self.gbelt = [[GravityBelt alloc] initWithLayer:self];
+		[self.gbelt addShip];
 
 
 	}

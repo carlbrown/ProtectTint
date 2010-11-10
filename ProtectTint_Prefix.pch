@@ -12,3 +12,10 @@
 #define kCRedColor 2
 
 #define kCShieldOffset 100
+
+#define kShipWidth	60
+#define	kShipHeight	36
+
+#define kShipMargin	2
+
+#define RANDOM_SHIP_FUNC()	(CCRANDOM_0_1() * 300) / 100
