@@ -80,7 +80,12 @@
 		[self addChild: redButton z:2];
 		[self addChild: greenButton z:2];
 		
-		[shipList addChild:ship z:1];		
+		id moveDownAction = [CCMoveTo actionWithDuration:2.0f position:ccp(size.width/2, 50.0)];
+		id blockMoveSeq = [CCSequence actions: moveDownAction, nil];
+		id spawnaction = [CCSpawn actions: blockMoveSeq, nil];
+		[ship runAction:[CCRepeatForever actionWithAction:spawnaction]];
+		[shipList addChild:ship z:1];	
+
 
 	}
 	return self;
