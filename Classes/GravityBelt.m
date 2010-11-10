@@ -111,16 +111,22 @@
 }
 
 -(void)runShipOffEnd:(id)Ship {
-	CCSprite* moon = (CCSprite*) [layer getChildByTag:180];
-
-	[(id<CCRGBAProtocol>) moon setOpacity: opacity + 25];
+	// ask director the the window size
+	CGSize size = [[CCDirector sharedDirector] winSize];
 	
-	if ((opacity + 26) > 250) {
+	CCSprite * moon = [CCSprite spriteWithFile:@"Moon.png"];
+	moon.position =  ccp( size.width/2 ,  50 /*Button Offset*/ + 48 /*Height of PNG/2 */ );
+
+	[layer addChild:moon z:-1];
+	
+	for (ShipSprite *s in self.ships) {
+		[s stopAllActions];
+	}
+	[self deleteShip:Ship];
 		UIAlertView *gameOverAlert = [[UIAlertView alloc] initWithTitle:@"Game Over" message:@"The Earth is now a wasteland, are you happy?" delegate:nil cancelButtonTitle:@"Quit" otherButtonTitles:nil];
 		[gameOverAlert show];
-	}
 
-	[self deleteShip:Ship];
+
 }
 
 

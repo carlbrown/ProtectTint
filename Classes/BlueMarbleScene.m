@@ -58,8 +58,6 @@
 		
 		// create and initialize our Background
 		CCSprite * earth = [CCSprite spriteWithFile:@"Earth.png"]; [earth setTag:360]; //it's a sphere
-		CCSprite * moon = [CCSprite spriteWithFile:@"Moon.png"]; [earth setTag:180]; //it's a sphere
-		[(id<CCRGBAProtocol>) moon setOpacity: 0];
 		ButtonSprite * blueButton = [ButtonSprite spriteWithFile:@"BlueButton.png"]; [blueButton setTag:kCBlueColor];
 		ButtonSprite * redButton = [ButtonSprite spriteWithFile:@"RedButton.png"];[redButton setTag:kCRedColor];;
 		ButtonSprite * yellowButton = [ButtonSprite spriteWithFile:@"YellowButton.png"];[yellowButton setTag:kCYellowColor];;
@@ -98,7 +96,6 @@
 		
 		// add the label as a child to this Layer
 		[self addChild: earth z:-2];
-		[self addChild: moon z:-1];
 		[self addChild: blueButton z:1];
 		[self addChild: redButton z:1];
 		[self addChild: yellowButton z:1];
