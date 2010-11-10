@@ -76,6 +76,7 @@
 		D33B344F128A532900C2583E /* RedButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B3443128A532900C2583E /* RedButton@2x.png */; };
 		D33B3450128A532900C2583E /* SpaceShips.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B3444128A532900C2583E /* SpaceShips.png */; };
 		D33B3451128A532900C2583E /* SpaceShips@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B3445128A532900C2583E /* SpaceShips@2x.png */; };
+		D33B34A8128A5B0600C2583E /* ShipSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = D33B34A7128A5B0600C2583E /* ShipSprite.m */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
 		DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */; };
@@ -338,6 +339,8 @@
 		D33B3443128A532900C2583E /* RedButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "RedButton@2x.png"; path = "ArtWork/RedButton@2x.png"; sourceTree = SOURCE_ROOT; };
 		D33B3444128A532900C2583E /* SpaceShips.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SpaceShips.png; path = ArtWork/SpaceShips.png; sourceTree = SOURCE_ROOT; };
 		D33B3445128A532900C2583E /* SpaceShips@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SpaceShips@2x.png"; path = "ArtWork/SpaceShips@2x.png"; sourceTree = SOURCE_ROOT; };
+		D33B34A6128A5B0600C2583E /* ShipSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipSprite.h; sourceTree = "<group>"; };
+		D33B34A7128A5B0600C2583E /* ShipSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipSprite.m; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -616,6 +619,8 @@
 				E0F80F5F120A0182005866B8 /* RootViewController.m */,
 				1F3B9A2C0EF2145700286867 /* ProtectTintAppDelegate.h */,
 				1F3B9A2B0EF2145700286867 /* ProtectTintAppDelegate.m */,
+				D33B34A6128A5B0600C2583E /* ShipSprite.h */,
+				D33B34A7128A5B0600C2583E /* ShipSprite.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1179,6 +1184,7 @@
 				1F3B9A2D0EF2145700286867 /* ProtectTintAppDelegate.m in Sources */,
 				E0F80F60120A0182005866B8 /* RootViewController.m in Sources */,
 				D33B3439128A531100C2583E /* BlueMarbleScene.m in Sources */,
+				D33B34A8128A5B0600C2583E /* ShipSprite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
