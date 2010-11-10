@@ -37,15 +37,24 @@
 		
 		// create and initialize our Background
 		CCSprite * earth = [CCSprite spriteWithFile:@"Earth.png"];
+		CCSprite * blueButton = [CCSprite spriteWithFile:@"BlueButton.png"];
+		CCSprite * redButton = [CCSprite spriteWithFile:@"RedButton.png"];
+		CCSprite * greenButton = [CCSprite spriteWithFile:@"GreenButton.png"];
 		
 		// ask director the the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
 
 		// position the Earth on the Bottom of the screen
-		earth.position =  ccp( 160 , 96 );
+		earth.position =  ccp( 160 , 100);
+		blueButton.position =  ccp(  0.0 , 0);
+		redButton.position =  ccp(  size.width - 105.0, 0);
+		greenButton.position =  ccp( size.width/2 - 53.0 , 0);
 		
 		// add the label as a child to this Layer
 		[self addChild: earth z:-1];
+		[self addChild: blueButton z:0];
+		[self addChild: redButton z:0];
+		[self addChild: greenButton z:0];
 	}
 	return self;
 }
