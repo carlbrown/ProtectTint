@@ -8,6 +8,7 @@
 
 // Import the interfaces
 #import "BlueMarbleScene.h"
+#import "CCSprite.h"
 
 // BlueMarbleScene implementation
 @implementation BlueMarbleScene
@@ -34,17 +35,17 @@
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init] )) {
 		
-		// create and initialize a Label
-		CCLabel* label = [CCLabel labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64];
+		// create and initialize our Background
+		CCSprite * earth = [CCSprite spriteWithFile:@"Earth.png"];
 		
 		// ask director the the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
-		
-		// position the label on the center of the screen
-		label.position =  ccp( size.width /2 , size.height/2 );
+
+		// position the label on the Bottom of the screen
+		earth.position =  ccp( 0 , size.height - 96 );
 		
 		// add the label as a child to this Layer
-		[self addChild: label];
+		[self addChild: earth];
 	}
 	return self;
 }
