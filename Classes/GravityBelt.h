@@ -15,6 +15,8 @@
 	CCLayer* layer;
 }
 
+@property (nonatomic, retain) NSMutableArray* ships;
+
 -(id)initWithLayer:(CCLayer*)l;
 
 -(NSUInteger) count;
@@ -24,5 +26,7 @@
 -(id)ShipAt:(NSUInteger)index;
 
 -(void)removeShip:(id)Ship;
+
+-(BOOL)checkForCollision;
 
 @end

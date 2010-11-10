@@ -29,6 +29,8 @@
 	// add layer as a child to scene
 	[scene addChild: layer];
 	
+	[layer scheduleUpdate];
+	
 	// return the scene
 	return scene;
 }
@@ -41,7 +43,7 @@
 	if( (self=[super init] )) {
 		
 		// create and initialize our Background
-		CCSprite * earth = [CCSprite spriteWithFile:@"Earth.png"];
+		CCSprite * earth = [CCSprite spriteWithFile:@"Earth.png"]; [earth setTag:360]; //it's a sphere
 		ButtonSprite * blueButton = [ButtonSprite spriteWithFile:@"BlueButton.png"]; [blueButton setTag:kCBlueColor];
 		ButtonSprite * redButton = [ButtonSprite spriteWithFile:@"RedButton.png"];[redButton setTag:kCRedColor];;
 		ButtonSprite * greenButton = [ButtonSprite spriteWithFile:@"GreenButton.png"];[greenButton setTag:kCGreenColor];;
@@ -94,6 +96,10 @@
 
 	}
 	return self;
+}
+
+- (void)update:(ccTime)dt {
+	[self.gbelt checkForCollision];
 }
 
 // on "dealloc" you need to release all your retained objects

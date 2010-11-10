@@ -8,9 +8,12 @@
 
 #import "GravityBelt.h"
 #import "ShipSprite.h"
-
+#import "ShieldSprite.h"
 
 @implementation GravityBelt
+
+@synthesize ships;
+
 -(id)initWithLayer:(CCLayer*)l
 {
 	self = [super init];
@@ -34,6 +37,15 @@
 -(NSUInteger) count
 {
 	return [ships count];
+}
+
+-(CGRect)getSpriteBounds:(CCSprite*)sprite
+{
+	CGPoint p = sprite.position;
+	//	CGPoint point = [layer convertToWorldSpaceAR:sprite.position];
+	CGSize size = sprite.contentSize;
+	
+	return CGRectMake(p.x, p.y, size.width, size.height);
 }
 
 -(id)addShip
@@ -62,7 +74,7 @@
 	id addTheShip = [CCCallFunc actionWithTarget:self selector:@selector(addShip)];
 	id remTheShip = [CCCallFuncN actionWithTarget:self selector:@selector(removeShip:)];
 	id delTheShip = [CCCallFuncN actionWithTarget:self selector:@selector(deleteShip:)];
-	id combine = [CCSequence actions:act1, addTheShip, act2, remTheShip, delTheShip, nil];
+	CCSequence *combine = [CCSequence actions:act1, addTheShip, act2, remTheShip, delTheShip, nil];
 	[Ship runAction:combine];
 	
 	return Ship;
@@ -92,5 +104,53 @@
 	CCSpriteBatchNode* batch = (CCSpriteBatchNode*) [layer getChildByTag:99];
 	[batch removeChild:Ship cleanup:YES];
 }
+
+-(BOOL)checkForCollision {
+	
+	//Check to see if there is an active shield
+	ShieldSprite *activeShield = (ShieldSprite*) [layer getChildByTag:100];
+	if (activeShield==nil) {
+		activeShield = (ShieldSprite*) [layer getChildByTag:101];
+	}
+	if (activeShield==nil) {
+		activeShield = (ShieldSprite*) [layer getChildByTag:102];
+	}	
+	if (activeShield==nil) {
+		//TODO: Check for an Earth collision here. but for now we only care about shields
+		return NO;
+	}
+	
+	CGRect targetRect = [self getSpriteBounds:activeShield];
+	NSUInteger value = (activeShield.tag-100);
+	
+	for(NSUInteger i = 0; i < [self.ships count]; i++) {
+		ShipSprite* ship = (ShipSprite*) [self ShipAt:i];
+		CGRect ShipRect = [self getSpriteBounds:ship];
+		
+		if(!CGRectIsNull(CGRectIntersection(targetRect, ShipRect))) {
+			if(ship.tag == value) {
+				[ship stopAllActions];
+				[self removeShip:ship];
+				
+				CGSize contentSize = [activeShield contentSize];
+				
+				id move1 = [CCMoveBy actionWithDuration:0.5 position:ccp(contentSize.width, 0.0)];
+				id delShip = [CCCallFuncN actionWithTarget:self selector:@selector(deleteShip:)];
+				id seq = [CCSequence actions:move1, delShip, nil];
+				
+				[ship runAction:seq];
+				
+				
+				return YES;
+			}
+			else {
+				return NO;
+			}
+		}
+	}
+
+	return NO;
+}
+
 
 @end
