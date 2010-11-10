@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class RootViewController;
+
 @interface ProtectTintAppDelegate : NSObject <UIApplicationDelegate> {
-	UIWindow *window;
+	UIWindow			*window;
+	RootViewController	*viewController;
 }
 
 @property (nonatomic, retain) UIWindow *window;

@@ -29,7 +29,7 @@
 
 
 #import "CCAtlasNode.h"
-#import "CCSpriteSheet.h"
+#import "CCSpriteBatchNode.h"
 
 
 @class CCTMXMapInfo;
@@ -61,7 +61,7 @@
  
  @since v0.8.1
  */
-@interface CCTMXLayer : CCSpriteSheet
+@interface CCTMXLayer : CCSpriteBatchNode
 {
 	CCTMXTilesetInfo	*tileset_;
 	NSString			*layerName_;
@@ -149,5 +149,5 @@
 /** CCTMXLayer doesn't support adding a CCSprite manually.
  @warning addchild:z:tag: is not supported on CCTMXLayer. Instead of setTileGID:at:/tileAt:
  */
--(id) addChild: (CCNode*)node z:(int)z tag:(int)tag;
+-(void) addChild: (CCNode*)node z:(int)z tag:(int)tag;
 @end

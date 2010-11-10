@@ -67,11 +67,12 @@ Requirements:
  
 */ 
 
-#import <UIKit/UIKit.h>
 #import <OpenAL/al.h>
 #import <OpenAL/alc.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import <Foundation/Foundation.h>
 #import "CDConfig.h"
+
 
 #if !defined(CD_DEBUG) || CD_DEBUG == 0
 #define CDLOG(...) do {} while (0)
@@ -121,6 +122,9 @@ typedef struct _bufferInfo {
 	ALuint bufferId;
 	int bufferState;
 	void* bufferData;
+	ALenum format;
+	ALsizei sizeInBytes;
+	ALsizei frequencyInHertz;
 } bufferInfo;	
 
 typedef struct _sourceInfo {
@@ -225,8 +229,6 @@ typedef struct _sourceInfo {
 
 /** Initializes the engine with a group definition and a total number of groups */
 -(id)init;
-/** Initializes the engine with a group definition, a total number of groups and an audio session category */
--(id)init:(UInt32) audioSessionCategory;
 
 /** Plays a sound in a channel group with a pitch, pan and gain. The sound could played looped or not */
 -(ALuint) playSound:(int) soundId sourceGroupId:(int)sourceGroupId pitch:(float) pitch pan:(float) pan gain:(float) gain loop:(BOOL) loop;
@@ -251,8 +253,13 @@ typedef struct _sourceInfo {
 -(void) loadBuffersAsynchronously:(NSArray *) loadRequests;
 -(BOOL) unloadBuffer:(int) soundId;
 -(ALCcontext *) openALContext;
--(void) audioSessionInterrupted;
--(void) audioSessionResumed;
+
+/** Returns the duration of the buffer in seconds or a negative value if the buffer id is invalid */
+-(float) bufferDurationInSeconds:(int) soundId;
+/** Returns the size of the buffer in bytes or a negative value if the buffer id is invalid */
+-(ALsizei) bufferSizeInBytes:(int) soundId;
+/** Returns the sampling frequency of the buffer in hertz or a negative value if the buffer id is invalid */
+-(ALsizei) bufferFrequencyInHertz:(int) soundId;
 
 /** Used internally, never call unless you know what you are doing */
 -(void) _soundSourcePreRelease:(CDSoundSource *) soundSource;
@@ -284,6 +291,8 @@ typedef struct _sourceInfo {
 @property (readwrite, nonatomic) BOOL looping;
 @property (readonly)  BOOL isPlaying;
 @property (readwrite, nonatomic) int soundId;
+/** Returns the duration of the attached buffer in seconds or a negative value if the buffer is invalid */
+@property (readonly) float durationInSeconds;
 
 /** Stores the last error code that occurred. Check against AL_NO_ERROR */
 @property (readonly) ALenum lastError;

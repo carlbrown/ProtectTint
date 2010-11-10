@@ -6,51 +6,113 @@
 //  Copyright PDAgent, LLC 2010. All rights reserved.
 //
 
-#import "ProtectTintAppDelegate.h"
 #import "cocos2d.h"
+
+#import "ProtectTintAppDelegate.h"
+#import "GameConfig.h"
 #import "BlueMarbleScene.h"
+#import "RootViewController.h"
 
 @implementation ProtectTintAppDelegate
 
 @synthesize window;
 
+- (void) removeStartupFlicker
+{
+	//
+	// THIS CODE REMOVES THE STARTUP FLICKER
+	//
+	// Uncomment the following code if you Application only supports landscape mode
+	//
+#if GAME_AUTOROTATION == kGameAutorotationUIViewController
+
+//	CC_ENABLE_DEFAULT_GL_STATES();
+//	CGSize size = [director winSize];
+//	CCSprite *sprite = [CCSprite spriteWithFile:@"Default.png"];
+//	sprite.position = ccp(size.width/2, size.height/2);
+//	sprite.rotation = -90;
+//	[sprite visit];
+//	[glView swapBuffers];
+//	CC_ENABLE_DEFAULT_GL_STATES();
+	
+#endif // GAME_AUTOROTATION == kGameAutorotationUIViewController	
+}
 - (void) applicationDidFinishLaunching:(UIApplication*)application
 {
-	// CC_DIRECTOR_INIT()
-	//
-	// 1. Initializes an EAGLView with 0-bit depth format, and RGB565 render buffer
-	// 2. EAGLView multiple touches: disabled
-	// 3. creates a UIWindow, and assign it to the "window" var (it must already be declared)
-	// 4. Parents EAGLView to the newly created window
-	// 5. Creates Display Link Director
-	// 5a. If it fails, it will use an NSTimer director
-	// 6. It will try to run at 60 FPS
-	// 7. Display FPS: NO
-	// 8. Device orientation: Portrait
-	// 9. Connects the director to the EAGLView
-	//
-	CC_DIRECTOR_INIT();
+	// Init the window
+	window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	
-	// Obtain the shared director in order to...
+	// Try to use CADisplayLink director
+	// if it fails (SDK < 3.1) use the default director
+	if( ! [CCDirector setDirectorType:kCCDirectorTypeDisplayLink] )
+		[CCDirector setDirectorType:kCCDirectorTypeDefault];
+	
+	
 	CCDirector *director = [CCDirector sharedDirector];
 	
-	// Sets landscape mode
-	[director setDeviceOrientation:kCCDeviceOrientationPortrait];
+	// Init the View Controller
+	viewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];
+	viewController.wantsFullScreenLayout = YES;
 	
-	// Turn on display FPS
+	//
+	// Create the EAGLView manually
+	//  1. Create a RGB565 format. Alternative: RGBA8
+	//	2. depth format of 0 bit. Use 16 or 24 bit for 3d effects, like CCPageTurnTransition
+	//
+	//
+	EAGLView *glView = [EAGLView viewWithFrame:[window bounds]
+								   pixelFormat:kEAGLColorFormatRGB565	// kEAGLColorFormatRGBA8
+								   depthFormat:0						// GL_DEPTH_COMPONENT16_OES
+						];
+	
+	// attach the openglView to the director
+	[director setOpenGLView:glView];
+	
+//	// Enables High Res mode (Retina Display) on iPhone 4 and maintains low res on all other devices
+//	if( ! [director enableRetinaDisplay:YES] )
+//		CCLOG(@"Retina Display Not supported");
+	
+	//
+	// VERY IMPORTANT:
+	// If the rotation is going to be controlled by a UIViewController
+	// then the device orientation should be "Portrait".
+	//
+	// IMPORTANT:
+	// By default, this template only supports Landscape orientations.
+	// Edit the RootViewController.m file to edit the supported orientations.
+	//
+//#if GAME_AUTOROTATION == kGameAutorotationUIViewController
+//	[director setDeviceOrientation:kCCDeviceOrientationPortrait];
+//#else
+//	[director setDeviceOrientation:kCCDeviceOrientationLandscapeLeft];
+//#endif
+	
+	[director setDeviceOrientation:kCCDeviceOrientationPortrait];
+
+	
+	[director setAnimationInterval:1.0/60];
 	[director setDisplayFPS:YES];
 	
-	// Turn on multiple touches
-	EAGLView *view = [director openGLView];
-	[view setMultipleTouchEnabled:YES];
+	
+	// make the OpenGLView a child of the view controller
+	[viewController setView:glView];
+	
+	// make the View Controller a child of the main window
+	[window addSubview: viewController.view];
+	
+	[window makeKeyAndVisible];
 	
 	// Default texture format for PNG/BMP/TIFF/JPEG/GIF images
 	// It can be RGBA8888, RGBA4444, RGB5_A1, RGB565
 	// You can change anytime.
-	[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA8888];	
+	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
+
 	
-		
-	[[CCDirector sharedDirector] runWithScene: [BlueMarbleScene scene]];
+	// Removes the startup flicker
+	[self removeStartupFlicker];
+	
+	// Run the intro Scene
+	[[CCDirector sharedDirector] runWithScene: [BlueMarbleScene scene]];		
 }
 
 
@@ -75,7 +137,15 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-	[[CCDirector sharedDirector] end];
+	CCDirector *director = [CCDirector sharedDirector];
+	
+	[[director openGLView] removeFromSuperview];
+	
+	[viewController release];
+	
+	[window release];
+	
+	[director end];	
 }
 
 - (void)applicationSignificantTimeChange:(UIApplication *)application {

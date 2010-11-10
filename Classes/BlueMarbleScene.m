@@ -8,6 +8,7 @@
 
 // Import the interfaces
 #import "BlueMarbleScene.h"
+#import "cocos2d.h"
 #import "CCSprite.h"
 
 // BlueMarbleScene implementation
@@ -50,11 +51,22 @@
 		redButton.position =  ccp(  size.width - 53.0, 25);
 		greenButton.position =  ccp( size.width/2 , 25);
 		
+		/*  Add the Space Ship sprite as a CCSprite
+		*/
+		CCSpriteBatchNode *shipList = [CCSpriteBatchNode batchNodeWithFile:@"SpaceShips.png"];
+		[self addChild:shipList z:0];
+		
+		CCSprite *ship = [[CCSprite alloc] initWithBatchNode:shipList rect:CGRectMake(0, 0, 60, 36)];
+		ship.position = ccp(size.width/2, size.height-50);
+		
 		// add the label as a child to this Layer
 		[self addChild: earth z:-1];
 		[self addChild: blueButton z:0];
 		[self addChild: redButton z:0];
 		[self addChild: greenButton z:0];
+		
+		[shipList addChild:ship z:1];		
+
 	}
 	return self;
 }
