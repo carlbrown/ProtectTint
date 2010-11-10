@@ -45,7 +45,7 @@
 		earth.position =  ccp( 160 , 96 );
 		
 		// add the label as a child to this Layer
-		[self addChild: earth];
+		[self addChild: earth z:-1];
 	}
 	return self;
 }
