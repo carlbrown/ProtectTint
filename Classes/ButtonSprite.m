@@ -8,8 +8,9 @@
 
 #import "ButtonSprite.h"
 
-
 @implementation ButtonSprite
+
+@synthesize shield;
 
 - (void)onEnter
 {
@@ -35,6 +36,9 @@
 	
 	if(CGRectContainsPoint(rect, wp)) {
 		NSLog(@"Button with tag %d pushed",self.tag);
+		if (self.shield) {
+			[self.parent addChild:self.shield];
+		}
 		return YES;
 	}
 	return NO;
@@ -49,6 +53,10 @@
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	NSLog(@"Button with tag %d ended",self.tag);
+	if (self.shield) {
+		[self.parent removeChild:self.shield cleanup: YES];
+	}
+	
 
 }
 

@@ -78,6 +78,13 @@
 		D33B3451128A532900C2583E /* SpaceShips@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B3445128A532900C2583E /* SpaceShips@2x.png */; };
 		D33B34A8128A5B0600C2583E /* ShipSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = D33B34A7128A5B0600C2583E /* ShipSprite.m */; };
 		D33B34BB128A5BB600C2583E /* ButtonSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = D33B34BA128A5BB600C2583E /* ButtonSprite.m */; };
+		D33B35E7128A6B8D00C2583E /* BlueShield.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B35E1128A6B8D00C2583E /* BlueShield.png */; };
+		D33B35E8128A6B8D00C2583E /* BlueShield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B35E2128A6B8D00C2583E /* BlueShield@2x.png */; };
+		D33B35E9128A6B8D00C2583E /* GreenShield.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B35E3128A6B8D00C2583E /* GreenShield.png */; };
+		D33B35EA128A6B8D00C2583E /* GreenShield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B35E4128A6B8D00C2583E /* GreenShield@2x.png */; };
+		D33B35EB128A6B8D00C2583E /* RedShield.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B35E5128A6B8D00C2583E /* RedShield.png */; };
+		D33B35EC128A6B8D00C2583E /* RedShield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B35E6128A6B8D00C2583E /* RedShield@2x.png */; };
+		D33B35F1128A6CB000C2583E /* ShieldSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = D33B35F0128A6CB000C2583E /* ShieldSprite.m */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
 		DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */; };
@@ -344,6 +351,14 @@
 		D33B34A7128A5B0600C2583E /* ShipSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipSprite.m; sourceTree = "<group>"; };
 		D33B34B9128A5BB600C2583E /* ButtonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonSprite.h; sourceTree = "<group>"; };
 		D33B34BA128A5BB600C2583E /* ButtonSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonSprite.m; sourceTree = "<group>"; };
+		D33B35E1128A6B8D00C2583E /* BlueShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BlueShield.png; path = ArtWork/BlueShield.png; sourceTree = SOURCE_ROOT; };
+		D33B35E2128A6B8D00C2583E /* BlueShield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BlueShield@2x.png"; path = "ArtWork/BlueShield@2x.png"; sourceTree = SOURCE_ROOT; };
+		D33B35E3128A6B8D00C2583E /* GreenShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GreenShield.png; path = ArtWork/GreenShield.png; sourceTree = SOURCE_ROOT; };
+		D33B35E4128A6B8D00C2583E /* GreenShield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GreenShield@2x.png"; path = "ArtWork/GreenShield@2x.png"; sourceTree = SOURCE_ROOT; };
+		D33B35E5128A6B8D00C2583E /* RedShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RedShield.png; path = ArtWork/RedShield.png; sourceTree = SOURCE_ROOT; };
+		D33B35E6128A6B8D00C2583E /* RedShield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "RedShield@2x.png"; path = "ArtWork/RedShield@2x.png"; sourceTree = SOURCE_ROOT; };
+		D33B35EF128A6CB000C2583E /* ShieldSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShieldSprite.h; sourceTree = "<group>"; };
+		D33B35F0128A6CB000C2583E /* ShieldSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShieldSprite.m; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -626,6 +641,8 @@
 				D33B34A7128A5B0600C2583E /* ShipSprite.m */,
 				D33B34B9128A5BB600C2583E /* ButtonSprite.h */,
 				D33B34BA128A5BB600C2583E /* ButtonSprite.m */,
+				D33B35EF128A6CB000C2583E /* ShieldSprite.h */,
+				D33B35F0128A6CB000C2583E /* ShieldSprite.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -735,6 +752,12 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D33B35E1128A6B8D00C2583E /* BlueShield.png */,
+				D33B35E2128A6B8D00C2583E /* BlueShield@2x.png */,
+				D33B35E3128A6B8D00C2583E /* GreenShield.png */,
+				D33B35E4128A6B8D00C2583E /* GreenShield@2x.png */,
+				D33B35E5128A6B8D00C2583E /* RedShield.png */,
+				D33B35E6128A6B8D00C2583E /* RedShield@2x.png */,
 				D33B343A128A532900C2583E /* BlueButton.png */,
 				D33B343B128A532900C2583E /* BlueButton@2x.png */,
 				D33B343C128A532900C2583E /* Default.png */,
@@ -1175,6 +1198,12 @@
 				D33B344F128A532900C2583E /* RedButton@2x.png in Resources */,
 				D33B3450128A532900C2583E /* SpaceShips.png in Resources */,
 				D33B3451128A532900C2583E /* SpaceShips@2x.png in Resources */,
+				D33B35E7128A6B8D00C2583E /* BlueShield.png in Resources */,
+				D33B35E8128A6B8D00C2583E /* BlueShield@2x.png in Resources */,
+				D33B35E9128A6B8D00C2583E /* GreenShield.png in Resources */,
+				D33B35EA128A6B8D00C2583E /* GreenShield@2x.png in Resources */,
+				D33B35EB128A6B8D00C2583E /* RedShield.png in Resources */,
+				D33B35EC128A6B8D00C2583E /* RedShield@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1191,6 +1220,7 @@
 				D33B3439128A531100C2583E /* BlueMarbleScene.m in Sources */,
 				D33B34A8128A5B0600C2583E /* ShipSprite.m in Sources */,
 				D33B34BB128A5BB600C2583E /* ButtonSprite.m in Sources */,
+				D33B35F1128A6CB000C2583E /* ShieldSprite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

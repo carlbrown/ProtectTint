@@ -10,3 +10,5 @@
 #define kCBlueColor 0
 #define kCGreenColor 1
 #define kCRedColor 2
+
+#define kCShieldOffset 100

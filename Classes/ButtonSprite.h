@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "ShieldSprite.h"
 
 @interface ButtonSprite : CCSprite <CCTargetedTouchDelegate> {
-
+	ShieldSprite *shield;
 }
+
+@property (nonatomic, retain) ShieldSprite *shield;
 
 @end

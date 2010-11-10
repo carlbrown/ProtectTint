@@ -11,6 +11,7 @@
 #import "cocos2d.h"
 #import "ShipSprite.h"
 #import "ButtonSprite.h"
+#import "ShieldSprite.h"
 
 // BlueMarbleScene implementation
 @implementation BlueMarbleScene
@@ -43,6 +44,10 @@
 		ButtonSprite * redButton = [ButtonSprite spriteWithFile:@"RedButton.png"];[redButton setTag:kCRedColor];;
 		ButtonSprite * greenButton = [ButtonSprite spriteWithFile:@"GreenButton.png"];[greenButton setTag:kCGreenColor];;
 		
+		ShieldSprite * blueShield = [ShieldSprite spriteWithFile:@"BlueShield.png"]; [blueShield setTag:(kCShieldOffset + kCBlueColor)];
+		ShieldSprite * redShield = [ShieldSprite spriteWithFile:@"RedShield.png"];[redShield setTag:(kCShieldOffset + kCRedColor)];
+		ShieldSprite * greenShield = [ShieldSprite spriteWithFile:@"GreenShield.png"];[greenShield setTag:(kCShieldOffset + kCGreenColor)];
+		
 		// ask director the the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
 
@@ -51,6 +56,15 @@
 		blueButton.position =  ccp(  53.0 , 25);
 		redButton.position =  ccp(  size.width - 53.0, 25);
 		greenButton.position =  ccp( size.width/2 , 25);
+		
+		
+		greenShield.position =  ccp( size.width/2 ,  50 /*Button Offset*/ + 48 /*Height of PNG/2 */ );
+		blueShield.position =  ccp( size.width/2 ,  50 /*Button Offset*/ + 48 /*Height of PNG/2 */ );
+		redShield.position =  ccp( size.width/2 ,  50 /*Button Offset*/ + 48 /*Height of PNG/2 */ );
+
+		[blueButton setShield:blueShield];
+		[redButton setShield:redShield];
+		[greenButton setShield:greenShield];
 		
 		/*  Add the Space Ship sprite as a CCSprite
 		*/
