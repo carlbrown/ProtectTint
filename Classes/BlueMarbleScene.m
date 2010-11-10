@@ -45,10 +45,10 @@
 		CGSize size = [[CCDirector sharedDirector] winSize];
 
 		// position the Earth on the Bottom of the screen
-		earth.position =  ccp( 160 , 100);
-		blueButton.position =  ccp(  0.0 , 0);
-		redButton.position =  ccp(  size.width - 105.0, 0);
-		greenButton.position =  ccp( size.width/2 - 53.0 , 0);
+		earth.position =  ccp( size.width/2 ,  50 /*Button Offset*/ + 48 /*Height of PNG/2 */ );
+		blueButton.position =  ccp(  53.0 , 25);
+		redButton.position =  ccp(  size.width - 53.0, 25);
+		greenButton.position =  ccp( size.width/2 , 25);
 		
 		// add the label as a child to this Layer
 		[self addChild: earth z:-1];
