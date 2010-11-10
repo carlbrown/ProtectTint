@@ -39,9 +39,9 @@
 		
 		// create and initialize our Background
 		CCSprite * earth = [CCSprite spriteWithFile:@"Earth.png"];
-		ButtonSprite * blueButton = [CCSprite spriteWithFile:@"BlueButton.png"];
-		ButtonSprite * redButton = [CCSprite spriteWithFile:@"RedButton.png"];
-		ButtonSprite * greenButton = [CCSprite spriteWithFile:@"GreenButton.png"];
+		ButtonSprite * blueButton = [ButtonSprite spriteWithFile:@"BlueButton.png"]; [blueButton setTag:kCBlueColor];
+		ButtonSprite * redButton = [ButtonSprite spriteWithFile:@"RedButton.png"];[redButton setTag:kCRedColor];;
+		ButtonSprite * greenButton = [ButtonSprite spriteWithFile:@"GreenButton.png"];[greenButton setTag:kCGreenColor];;
 		
 		// ask director the the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
@@ -55,16 +55,16 @@
 		/*  Add the Space Ship sprite as a CCSprite
 		*/
 		CCSpriteBatchNode *shipList = [CCSpriteBatchNode batchNodeWithFile:@"SpaceShips.png"];
-		[self addChild:shipList z:0];
+		[self addChild:shipList z:0 tag:99];
 		
-		ShipSprite *ship = [[CCSprite alloc] initWithBatchNode:shipList rect:CGRectMake(0, 0, 60, 36)];
+		ShipSprite *ship = [[ShipSprite alloc] initWithBatchNode:shipList rect:CGRectMake(0, 0, 60, 36)];
 		ship.position = ccp(size.width/2, size.height-50);
 		
 		// add the label as a child to this Layer
-		[self addChild: earth z:-1];
-		[self addChild: blueButton z:0];
-		[self addChild: redButton z:0];
-		[self addChild: greenButton z:0];
+		[self addChild: earth z:0];
+		[self addChild: blueButton z:2];
+		[self addChild: redButton z:2];
+		[self addChild: greenButton z:2];
 		
 		[shipList addChild:ship z:1];		
 

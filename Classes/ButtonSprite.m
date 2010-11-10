@@ -34,6 +34,7 @@
 	CGPoint wp = [self convertToWorldSpaceAR:p];
 	
 	if(CGRectContainsPoint(rect, wp)) {
+		NSLog(@"Button with tag %d pushed",self.tag);
 		return YES;
 	}
 	return NO;
@@ -41,14 +42,19 @@
 
 - (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
 {
+	NSLog(@"Button with tag %d moved",self.tag);
+
 }
 
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
+	NSLog(@"Button with tag %d ended",self.tag);
+
 }
 
 - (void)ccTouchCancelled:(UITouch *)touch withEvent:(UIEvent *)event
 {
+	NSLog(@"Button with tag %d canceled",self.tag);
 }
 
 @end

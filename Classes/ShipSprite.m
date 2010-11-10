@@ -29,11 +29,13 @@
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+	
 	CGRect rect = CGRectMake(position_.x-(contentSize_.width/2), (position_.y-(contentSize_.height/2)), contentSize_.width, contentSize_.height);
 	CGPoint p = [self convertTouchToNodeSpaceAR:touch];
 	CGPoint wp = [self convertToWorldSpaceAR:p];
 	
 	if(CGRectContainsPoint(rect, wp)) {
+		NSLog(@"Ship touch began");
 		return YES;
 	}
 	return NO;
