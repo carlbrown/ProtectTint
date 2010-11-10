@@ -10,6 +10,9 @@
 #define kCBlueColor 0
 #define kCGreenColor 1
 #define kCRedColor 2
+#define kCPurpleColor 3
+#define kCYellowColor 4
+#define kCOrangeColor 5
 
 #define kCShieldOffset 100
 
@@ -18,4 +21,4 @@
 
 #define kShipMargin	2
 
-#define RANDOM_SHIP_FUNC()	(CCRANDOM_0_1() * 300) / 100
+#define RANDOM_SHIP_FUNC()	(CCRANDOM_0_1() * 600) / 100

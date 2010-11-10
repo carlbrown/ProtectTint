@@ -87,6 +87,12 @@
 		D33B3659128A82EC00C2583E /* GravityBelt.m in Sources */ = {isa = PBXBuildFile; fileRef = D33B3658128A82EC00C2583E /* GravityBelt.m */; };
 		D33B37A6128A9D7F00C2583E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B37A4128A9D7F00C2583E /* Icon.png */; };
 		D33B37A7128A9D7F00C2583E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B37A5128A9D7F00C2583E /* Icon@2x.png */; };
+		D33B37BD128AA0DA00C2583E /* OrangeShield.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B37B7128AA0DA00C2583E /* OrangeShield.png */; };
+		D33B37BE128AA0DA00C2583E /* OrangeShield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B37B8128AA0DA00C2583E /* OrangeShield@2x.png */; };
+		D33B37BF128AA0DA00C2583E /* PurpleShield.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B37B9128AA0DA00C2583E /* PurpleShield.png */; };
+		D33B37C0128AA0DA00C2583E /* PurpleShield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B37BA128AA0DA00C2583E /* PurpleShield@2x.png */; };
+		D33B37C1128AA0DA00C2583E /* YellowShield.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B37BB128AA0DA00C2583E /* YellowShield.png */; };
+		D33B37C2128AA0DA00C2583E /* YellowShield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B37BC128AA0DA00C2583E /* YellowShield@2x.png */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
 		DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */; };
@@ -363,6 +369,12 @@
 		D33B3658128A82EC00C2583E /* GravityBelt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravityBelt.m; sourceTree = "<group>"; };
 		D33B37A4128A9D7F00C2583E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ArtWork/Icon.png; sourceTree = SOURCE_ROOT; };
 		D33B37A5128A9D7F00C2583E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "ArtWork/Icon@2x.png"; sourceTree = SOURCE_ROOT; };
+		D33B37B7128AA0DA00C2583E /* OrangeShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OrangeShield.png; path = ArtWork/OrangeShield.png; sourceTree = SOURCE_ROOT; };
+		D33B37B8128AA0DA00C2583E /* OrangeShield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "OrangeShield@2x.png"; path = "ArtWork/OrangeShield@2x.png"; sourceTree = SOURCE_ROOT; };
+		D33B37B9128AA0DA00C2583E /* PurpleShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PurpleShield.png; path = ArtWork/PurpleShield.png; sourceTree = SOURCE_ROOT; };
+		D33B37BA128AA0DA00C2583E /* PurpleShield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PurpleShield@2x.png"; path = "ArtWork/PurpleShield@2x.png"; sourceTree = SOURCE_ROOT; };
+		D33B37BB128AA0DA00C2583E /* YellowShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = YellowShield.png; path = ArtWork/YellowShield.png; sourceTree = SOURCE_ROOT; };
+		D33B37BC128AA0DA00C2583E /* YellowShield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "YellowShield@2x.png"; path = "ArtWork/YellowShield@2x.png"; sourceTree = SOURCE_ROOT; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -757,6 +769,12 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D33B37B7128AA0DA00C2583E /* OrangeShield.png */,
+				D33B37B8128AA0DA00C2583E /* OrangeShield@2x.png */,
+				D33B37B9128AA0DA00C2583E /* PurpleShield.png */,
+				D33B37BA128AA0DA00C2583E /* PurpleShield@2x.png */,
+				D33B37BB128AA0DA00C2583E /* YellowShield.png */,
+				D33B37BC128AA0DA00C2583E /* YellowShield@2x.png */,
 				D33B37A4128A9D7F00C2583E /* Icon.png */,
 				D33B37A5128A9D7F00C2583E /* Icon@2x.png */,
 				D33B35E1128A6B8D00C2583E /* BlueShield.png */,
@@ -1209,6 +1227,12 @@
 				D33B35EC128A6B8D00C2583E /* RedShield@2x.png in Resources */,
 				D33B37A6128A9D7F00C2583E /* Icon.png in Resources */,
 				D33B37A7128A9D7F00C2583E /* Icon@2x.png in Resources */,
+				D33B37BD128AA0DA00C2583E /* OrangeShield.png in Resources */,
+				D33B37BE128AA0DA00C2583E /* OrangeShield@2x.png in Resources */,
+				D33B37BF128AA0DA00C2583E /* PurpleShield.png in Resources */,
+				D33B37C0128AA0DA00C2583E /* PurpleShield@2x.png in Resources */,
+				D33B37C1128AA0DA00C2583E /* YellowShield.png in Resources */,
+				D33B37C2128AA0DA00C2583E /* YellowShield@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
