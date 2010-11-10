@@ -93,6 +93,7 @@
 		D33B37C2128AA0DA00C2583E /* YellowShield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B37BC128AA0DA00C2583E /* YellowShield@2x.png */; };
 		D33B3845128AB13F00C2583E /* YellowButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B3843128AB13F00C2583E /* YellowButton.png */; };
 		D33B3846128AB13F00C2583E /* YellowButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B3844128AB13F00C2583E /* YellowButton@2x.png */; };
+		D33B3869128AC86F00C2583E /* Moon.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B3868128AC86F00C2583E /* Moon.png */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
 		DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */; };
@@ -375,6 +376,7 @@
 		D33B37BC128AA0DA00C2583E /* YellowShield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "YellowShield@2x.png"; path = "ArtWork/YellowShield@2x.png"; sourceTree = SOURCE_ROOT; };
 		D33B3843128AB13F00C2583E /* YellowButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = YellowButton.png; path = ArtWork/YellowButton.png; sourceTree = SOURCE_ROOT; };
 		D33B3844128AB13F00C2583E /* YellowButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "YellowButton@2x.png"; path = "ArtWork/YellowButton@2x.png"; sourceTree = SOURCE_ROOT; };
+		D33B3868128AC86F00C2583E /* Moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Moon.png; path = ArtWork/Moon.png; sourceTree = SOURCE_ROOT; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -769,6 +771,7 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D33B3868128AC86F00C2583E /* Moon.png */,
 				D33B3843128AB13F00C2583E /* YellowButton.png */,
 				D33B3844128AB13F00C2583E /* YellowButton@2x.png */,
 				D33B37B7128AA0DA00C2583E /* OrangeShield.png */,
@@ -1233,6 +1236,7 @@
 				D33B37C2128AA0DA00C2583E /* YellowShield@2x.png in Resources */,
 				D33B3845128AB13F00C2583E /* YellowButton.png in Resources */,
 				D33B3846128AB13F00C2583E /* YellowButton@2x.png in Resources */,
+				D33B3869128AC86F00C2583E /* Moon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

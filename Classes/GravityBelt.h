@@ -18,6 +18,7 @@
 	BOOL redButtondown;
 	BOOL yellowButtondown;
 	ShieldSprite *currentShield;
+	int opacity;
 }
 
 @property (nonatomic, retain) NSMutableArray* ships;
@@ -36,6 +37,7 @@
 -(id)ShipAt:(NSUInteger)index;
 
 -(void)removeShip:(id)Ship;
+-(void)runShipOffEnd:(id)Ship;
 
 -(BOOL)checkForCollision;
 

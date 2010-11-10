@@ -25,6 +25,7 @@
 		yellowButtondown=NO;
 		redButtondown=NO;
 		currentShield=nil;
+		opacity=0;
 	}
 	
 	return self;
@@ -77,7 +78,7 @@
 	id act2 = [CCMoveTo actionWithDuration:4.5 position:endPoint];
 	id addTheShip = [CCCallFunc actionWithTarget:self selector:@selector(addShip)];
 	id remTheShip = [CCCallFuncN actionWithTarget:self selector:@selector(removeShip:)];
-	id delTheShip = [CCCallFuncN actionWithTarget:self selector:@selector(deleteShip:)];
+	id delTheShip = [CCCallFuncN actionWithTarget:self selector:@selector(runShipOffEnd:)];
 	CCSequence *combine = [CCSequence actions:act1, addTheShip, act2, remTheShip, delTheShip, nil];
 	[Ship runAction:combine];
 	
@@ -108,6 +109,20 @@
 	CCSpriteBatchNode* batch = (CCSpriteBatchNode*) [layer getChildByTag:99];
 	[batch removeChild:Ship cleanup:YES];
 }
+
+-(void)runShipOffEnd:(id)Ship {
+	CCSprite* moon = (CCSprite*) [layer getChildByTag:180];
+
+	[(id<CCRGBAProtocol>) moon setOpacity: opacity + 25];
+	
+	if ((opacity + 26) > 250) {
+		UIAlertView *gameOverAlert = [[UIAlertView alloc] initWithTitle:@"Game Over" message:@"The Earth is now a wasteland, are you happy?" delegate:nil cancelButtonTitle:@"Quit" otherButtonTitles:nil];
+		[gameOverAlert show];
+	}
+
+	[self deleteShip:Ship];
+}
+
 
 -(BOOL)checkForCollision {
 	
