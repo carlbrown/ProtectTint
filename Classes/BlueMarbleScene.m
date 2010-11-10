@@ -75,16 +75,16 @@
 		ship.position = ccp(size.width/2, size.height-50);
 		
 		// add the label as a child to this Layer
-		[self addChild: earth z:0];
-		[self addChild: blueButton z:2];
-		[self addChild: redButton z:2];
-		[self addChild: greenButton z:2];
+		[self addChild: earth z:-1];
+		[self addChild: blueButton z:1];
+		[self addChild: redButton z:1];
+		[self addChild: greenButton z:1];
 		
 		id moveDownAction = [CCMoveTo actionWithDuration:2.0f position:ccp(size.width/2, 50.0)];
 		id blockMoveSeq = [CCSequence actions: moveDownAction, nil];
 		id spawnaction = [CCSpawn actions: blockMoveSeq, nil];
 		[ship runAction:[CCRepeatForever actionWithAction:spawnaction]];
-		[shipList addChild:ship z:1];	
+		[shipList addChild:ship];	
 
 
 	}

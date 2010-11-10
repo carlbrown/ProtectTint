@@ -37,7 +37,7 @@
 	if(CGRectContainsPoint(rect, wp)) {
 		NSLog(@"Button with tag %d pushed",self.tag);
 		if (self.shield) {
-			[self.parent addChild:self.shield];
+			[self.parent addChild:self.shield z:2];
 		}
 		return YES;
 	}
