@@ -12,7 +12,7 @@
 
 @implementation GravityBelt
 
-@synthesize ships, shields, blueButtondown, greenButtondown, redButtondown, currentShield;
+@synthesize ships, shields, blueButtondown, yellowButtondown, redButtondown, currentShield;
 
 -(id)initWithLayer:(CCLayer*)l
 {
@@ -22,7 +22,7 @@
 		layer = l;
 		ships = [[NSMutableArray alloc] init];
 		blueButtondown=NO;
-		greenButtondown=NO;
+		yellowButtondown=NO;
 		redButtondown=NO;
 		currentShield=nil;
 	}
@@ -112,31 +112,26 @@
 -(BOOL)checkForCollision {
 	
 	//Check to see if there is an active shield
-	ShieldSprite *activeShield = (ShieldSprite*) [layer getChildByTag:100];
-	if (activeShield==nil) {
-		activeShield = (ShieldSprite*) [layer getChildByTag:101];
-	}
-	if (activeShield==nil) {
-		activeShield = (ShieldSprite*) [layer getChildByTag:102];
-	}	
-	if (activeShield==nil) {
+	
+	if (self.currentShield==nil) {
 		//TODO: Check for an Earth collision here. but for now we only care about shields
 		return NO;
 	}
 	
-	CGRect targetRect = [self getSpriteBounds:activeShield];
-	NSUInteger value = (activeShield.tag-100);
+	CGRect targetRect = [self getSpriteBounds:self.currentShield];
+	NSUInteger value = (self.currentShield.tag-100);
 	
 	for(NSUInteger i = 0; i < [self.ships count]; i++) {
 		ShipSprite* ship = (ShipSprite*) [self ShipAt:i];
 		CGRect ShipRect = [self getSpriteBounds:ship];
 		
 		if(!CGRectIsNull(CGRectIntersection(targetRect, ShipRect))) {
+			//NSLog(@"Comparing Shield color %d with ship color %d",value, ship.tag);
 			if(ship.tag == value) {
 				[ship stopAllActions];
 				[self removeShip:ship];
 				
-				CGSize contentSize = [activeShield contentSize];
+				CGSize contentSize = [self.currentShield contentSize];
 				
 				id move1 = [CCMoveBy actionWithDuration:0.5 position:ccp(contentSize.width, 0.0)];
 				id delShip = [CCCallFuncN actionWithTarget:self selector:@selector(deleteShip:)];
@@ -159,29 +154,35 @@
 -(void) displayShield {
 	if (self.currentShield) {
 		[layer removeChild:self.currentShield cleanup:YES];
+		self.currentShield=nil;
 	}
-	if (self.greenButtondown && !self.blueButtondown && !self.redButtondown) {
-		[self setCurrentShield:[shields objectAtIndex:kCGreenColor]];
-	} else if (!self.greenButtondown && self.blueButtondown && !self.redButtondown) {
-		[self setCurrentShield:[shields objectAtIndex:kCBlueColor]];
-	} else if (!self.greenButtondown && !self.blueButtondown && self.redButtondown) {
-		[self setCurrentShield:[shields objectAtIndex:kCRedColor]];
-	} else if (!self.greenButtondown && self.blueButtondown && self.redButtondown) {
-		[self setCurrentShield:[shields objectAtIndex:kCPurpleColor]];
-	} else if (self.greenButtondown && self.blueButtondown && !self.redButtondown) {
+	if (self.yellowButtondown && !self.blueButtondown && !self.redButtondown) {
 		[self setCurrentShield:[shields objectAtIndex:kCYellowColor]];
-	} else if (self.greenButtondown && !self.blueButtondown && self.redButtondown) {
+		[layer addChild:self.currentShield z:2 tag:(kCShieldOffset + kCYellowColor)];
+	} else if (!self.yellowButtondown && self.blueButtondown && !self.redButtondown) {
+		[self setCurrentShield:[shields objectAtIndex:kCBlueColor]];
+		[layer addChild:self.currentShield z:2 tag:(kCShieldOffset + kCBlueColor)];
+	} else if (!self.yellowButtondown && !self.blueButtondown && self.redButtondown) {
+		[self setCurrentShield:[shields objectAtIndex:kCRedColor]];
+		[layer addChild:self.currentShield z:2 tag:(kCShieldOffset + kCRedColor)];
+	} else if (!self.yellowButtondown && self.blueButtondown && self.redButtondown) {
+		[self setCurrentShield:[shields objectAtIndex:kCPurpleColor]];
+		[layer addChild:self.currentShield z:2 tag:(kCShieldOffset + kCPurpleColor)];
+	} else if (self.yellowButtondown && self.blueButtondown && !self.redButtondown) {
+		[self setCurrentShield:[shields objectAtIndex:kCGreenColor]];
+		[layer addChild:self.currentShield z:2 tag:(kCShieldOffset + kCGreenColor)];
+	} else if (self.yellowButtondown && !self.blueButtondown && self.redButtondown) {
 		[self setCurrentShield:[shields objectAtIndex:kCOrangeColor]];
+		[layer addChild:self.currentShield z:2 tag:(kCShieldOffset + kCOrangeColor)];
 	} 
-	[layer addChild:self.currentShield];
 }
 
 
 -(void) buttonDownForButton:(NSInteger) button {
 	if (button==kCBlueColor) {
 		self.blueButtondown=YES;
-	} else if (button==kCGreenColor) {
-		self.greenButtondown=YES;
+	} else if (button==kCYellowColor) {
+		self.yellowButtondown=YES;
 	} else if (button==kCRedColor) {
 		self.redButtondown=YES;
 	}
@@ -191,8 +192,8 @@
 -(void) buttonUpForButton:(NSInteger) button {
 	if (button==kCBlueColor) {
 		self.blueButtondown=NO;
-	} else if (button==kCGreenColor) {
-		self.greenButtondown=NO;
+	} else if (button==kCYellowColor) {
+		self.yellowButtondown=NO;
 	} else if (button==kCRedColor) {
 		self.redButtondown=NO;
 	}

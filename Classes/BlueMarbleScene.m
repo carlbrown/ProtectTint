@@ -60,7 +60,7 @@
 		CCSprite * earth = [CCSprite spriteWithFile:@"Earth.png"]; [earth setTag:360]; //it's a sphere
 		ButtonSprite * blueButton = [ButtonSprite spriteWithFile:@"BlueButton.png"]; [blueButton setTag:kCBlueColor];
 		ButtonSprite * redButton = [ButtonSprite spriteWithFile:@"RedButton.png"];[redButton setTag:kCRedColor];;
-		ButtonSprite * greenButton = [ButtonSprite spriteWithFile:@"GreenButton.png"];[greenButton setTag:kCGreenColor];;
+		ButtonSprite * yellowButton = [ButtonSprite spriteWithFile:@"YellowButton.png"];[yellowButton setTag:kCYellowColor];;
 		
 		ShieldSprite * blueShield = [ShieldSprite spriteWithFile:@"BlueShield.png"]; [blueShield setTag:(kCShieldOffset + kCBlueColor)];
 		ShieldSprite * redShield = [ShieldSprite spriteWithFile:@"RedShield.png"];[redShield setTag:(kCShieldOffset + kCRedColor)];
@@ -76,7 +76,7 @@
 		earth.position =  ccp( size.width/2 ,  50 /*Button Offset*/ + 48 /*Height of PNG/2 */ );
 		blueButton.position =  ccp(  53.0 , 25);
 		redButton.position =  ccp(  size.width - 53.0, 25);
-		greenButton.position =  ccp( size.width/2 , 25);
+		yellowButton.position =  ccp( size.width/2 , 25);
 		
 		
 		greenShield.position =  ccp( size.width/2 ,  50 /*Button Offset*/ + 48 /*Height of PNG/2 */ );
@@ -98,7 +98,7 @@
 		[self addChild: earth z:-1];
 		[self addChild: blueButton z:1];
 		[self addChild: redButton z:1];
-		[self addChild: greenButton z:1];
+		[self addChild: yellowButton z:1];
 		
 //		id moveDownAction = [CCMoveTo actionWithDuration:2.0f position:ccp(size.width/2, 50.0)];
 //		id blockMoveSeq = [CCSequence actions: moveDownAction, nil];
@@ -112,7 +112,7 @@
 		
 		[blueButton setGbelt:self.gbelt];
 		[redButton setGbelt:self.gbelt];
-		[greenButton setGbelt:self.gbelt];
+		[yellowButton setGbelt:self.gbelt];
 		
 		[self.gbelt setShields:[NSMutableArray arrayWithObjects:blueShield, greenShield, redShield, purpleShield, yellowShield, orangeShield, nil]];
 		[self.gbelt addShip];

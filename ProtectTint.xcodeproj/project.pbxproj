@@ -69,8 +69,6 @@
 		D33B3449128A532900C2583E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B343D128A532900C2583E /* Default@2x.png */; };
 		D33B344A128A532900C2583E /* Earth.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B343E128A532900C2583E /* Earth.png */; };
 		D33B344B128A532900C2583E /* Earth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B343F128A532900C2583E /* Earth@2x.png */; };
-		D33B344C128A532900C2583E /* GreenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B3440128A532900C2583E /* GreenButton.png */; };
-		D33B344D128A532900C2583E /* GreenButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B3441128A532900C2583E /* GreenButton@2x.png */; };
 		D33B344E128A532900C2583E /* RedButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B3442128A532900C2583E /* RedButton.png */; };
 		D33B344F128A532900C2583E /* RedButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B3443128A532900C2583E /* RedButton@2x.png */; };
 		D33B3450128A532900C2583E /* SpaceShips.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B3444128A532900C2583E /* SpaceShips.png */; };
@@ -93,6 +91,8 @@
 		D33B37C0128AA0DA00C2583E /* PurpleShield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B37BA128AA0DA00C2583E /* PurpleShield@2x.png */; };
 		D33B37C1128AA0DA00C2583E /* YellowShield.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B37BB128AA0DA00C2583E /* YellowShield.png */; };
 		D33B37C2128AA0DA00C2583E /* YellowShield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B37BC128AA0DA00C2583E /* YellowShield@2x.png */; };
+		D33B3845128AB13F00C2583E /* YellowButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B3843128AB13F00C2583E /* YellowButton.png */; };
+		D33B3846128AB13F00C2583E /* YellowButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B3844128AB13F00C2583E /* YellowButton@2x.png */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
 		DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */; };
@@ -347,8 +347,6 @@
 		D33B343D128A532900C2583E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "ArtWork/Default@2x.png"; sourceTree = SOURCE_ROOT; };
 		D33B343E128A532900C2583E /* Earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Earth.png; path = ArtWork/Earth.png; sourceTree = SOURCE_ROOT; };
 		D33B343F128A532900C2583E /* Earth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Earth@2x.png"; path = "ArtWork/Earth@2x.png"; sourceTree = SOURCE_ROOT; };
-		D33B3440128A532900C2583E /* GreenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GreenButton.png; path = ArtWork/GreenButton.png; sourceTree = SOURCE_ROOT; };
-		D33B3441128A532900C2583E /* GreenButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GreenButton@2x.png"; path = "ArtWork/GreenButton@2x.png"; sourceTree = SOURCE_ROOT; };
 		D33B3442128A532900C2583E /* RedButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RedButton.png; path = ArtWork/RedButton.png; sourceTree = SOURCE_ROOT; };
 		D33B3443128A532900C2583E /* RedButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "RedButton@2x.png"; path = "ArtWork/RedButton@2x.png"; sourceTree = SOURCE_ROOT; };
 		D33B3444128A532900C2583E /* SpaceShips.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SpaceShips.png; path = ArtWork/SpaceShips.png; sourceTree = SOURCE_ROOT; };
@@ -375,6 +373,8 @@
 		D33B37BA128AA0DA00C2583E /* PurpleShield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PurpleShield@2x.png"; path = "ArtWork/PurpleShield@2x.png"; sourceTree = SOURCE_ROOT; };
 		D33B37BB128AA0DA00C2583E /* YellowShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = YellowShield.png; path = ArtWork/YellowShield.png; sourceTree = SOURCE_ROOT; };
 		D33B37BC128AA0DA00C2583E /* YellowShield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "YellowShield@2x.png"; path = "ArtWork/YellowShield@2x.png"; sourceTree = SOURCE_ROOT; };
+		D33B3843128AB13F00C2583E /* YellowButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = YellowButton.png; path = ArtWork/YellowButton.png; sourceTree = SOURCE_ROOT; };
+		D33B3844128AB13F00C2583E /* YellowButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "YellowButton@2x.png"; path = "ArtWork/YellowButton@2x.png"; sourceTree = SOURCE_ROOT; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -769,6 +769,8 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D33B3843128AB13F00C2583E /* YellowButton.png */,
+				D33B3844128AB13F00C2583E /* YellowButton@2x.png */,
 				D33B37B7128AA0DA00C2583E /* OrangeShield.png */,
 				D33B37B8128AA0DA00C2583E /* OrangeShield@2x.png */,
 				D33B37B9128AA0DA00C2583E /* PurpleShield.png */,
@@ -789,8 +791,6 @@
 				D33B343D128A532900C2583E /* Default@2x.png */,
 				D33B343E128A532900C2583E /* Earth.png */,
 				D33B343F128A532900C2583E /* Earth@2x.png */,
-				D33B3440128A532900C2583E /* GreenButton.png */,
-				D33B3441128A532900C2583E /* GreenButton@2x.png */,
 				D33B3442128A532900C2583E /* RedButton.png */,
 				D33B3443128A532900C2583E /* RedButton@2x.png */,
 				D33B3444128A532900C2583E /* SpaceShips.png */,
@@ -1213,8 +1213,6 @@
 				D33B3449128A532900C2583E /* Default@2x.png in Resources */,
 				D33B344A128A532900C2583E /* Earth.png in Resources */,
 				D33B344B128A532900C2583E /* Earth@2x.png in Resources */,
-				D33B344C128A532900C2583E /* GreenButton.png in Resources */,
-				D33B344D128A532900C2583E /* GreenButton@2x.png in Resources */,
 				D33B344E128A532900C2583E /* RedButton.png in Resources */,
 				D33B344F128A532900C2583E /* RedButton@2x.png in Resources */,
 				D33B3450128A532900C2583E /* SpaceShips.png in Resources */,
@@ -1233,6 +1231,8 @@
 				D33B37C0128AA0DA00C2583E /* PurpleShield@2x.png in Resources */,
 				D33B37C1128AA0DA00C2583E /* YellowShield.png in Resources */,
 				D33B37C2128AA0DA00C2583E /* YellowShield@2x.png in Resources */,
+				D33B3845128AB13F00C2583E /* YellowButton.png in Resources */,
+				D33B3846128AB13F00C2583E /* YellowButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

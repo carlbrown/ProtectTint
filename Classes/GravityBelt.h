@@ -16,7 +16,7 @@
 	NSMutableArray *shields;
 	BOOL blueButtondown;
 	BOOL redButtondown;
-	BOOL greenButtondown;
+	BOOL yellowButtondown;
 	ShieldSprite *currentShield;
 }
 
@@ -25,7 +25,7 @@
 @property (nonatomic, retain) ShieldSprite *currentShield;
 @property (nonatomic, readwrite) BOOL blueButtondown;
 @property (nonatomic, readwrite) BOOL redButtondown;
-@property (nonatomic, readwrite) BOOL greenButtondown;
+@property (nonatomic, readwrite) BOOL yellowButtondown;
 
 -(id)initWithLayer:(CCLayer*)l;
 
