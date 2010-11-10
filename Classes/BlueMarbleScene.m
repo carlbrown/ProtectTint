@@ -41,8 +41,8 @@
 		// ask director the the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
 
-		// position the label on the Bottom of the screen
-		earth.position =  ccp( 0 , size.height - 96 );
+		// position the Earth on the Bottom of the screen
+		earth.position =  ccp( 160 , 96 );
 		
 		// add the label as a child to this Layer
 		[self addChild: earth];
