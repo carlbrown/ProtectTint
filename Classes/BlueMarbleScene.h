@@ -21,6 +21,7 @@
 // returns a Scene that contains the BlueMarbleScene as the only child
 +(id) scene;
 
+-(void)setRandNumSeed;
 
 @end
 

@@ -35,6 +35,20 @@
 	return scene;
 }
 
+/*
+ * 360 8: Set random number seed
+ */
+-(void)setRandNumSeed
+{
+	struct timeval t;
+	gettimeofday(&t, nil);
+	unsigned int i;
+	i = t.tv_sec;
+	i += t.tv_usec;
+	srandom(i);
+}
+
+
 // on "init" you need to initialize your instance
 -(id) init
 {
@@ -89,6 +103,8 @@
 //		id spawnaction = [CCSpawn actions: blockMoveSeq, nil];
 //		[ship runAction:[CCRepeatForever actionWithAction:spawnaction]];
 //		[shipList addChild:ship];	
+		
+		[self setRandNumSeed];
 		
 		self.gbelt = [[GravityBelt alloc] initWithLayer:self];
 		[self.gbelt addShip];
