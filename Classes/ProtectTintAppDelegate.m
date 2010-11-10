@@ -8,7 +8,7 @@
 
 #import "ProtectTintAppDelegate.h"
 #import "cocos2d.h"
-#import "HelloWorldScene.h"
+#import "BlueMarbleScene.h"
 
 @implementation ProtectTintAppDelegate
 
@@ -50,7 +50,7 @@
 	[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA8888];	
 	
 		
-	[[CCDirector sharedDirector] runWithScene: [HelloWorld scene]];
+	[[CCDirector sharedDirector] runWithScene: [BlueMarbleScene scene]];
 }
 
 

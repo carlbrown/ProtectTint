@@ -1,5 +1,5 @@
 //
-//  HelloWorldLayer.m
+//  BlueMarbleSceneLayer.m
 //  ProtectTint
 //
 //  Created by Carl Brown on 11/9/10.
@@ -7,10 +7,10 @@
 //
 
 // Import the interfaces
-#import "HelloWorldScene.h"
+#import "BlueMarbleScene.h"
 
-// HelloWorld implementation
-@implementation HelloWorld
+// BlueMarbleScene implementation
+@implementation BlueMarbleScene
 
 +(id) scene
 {
@@ -18,7 +18,7 @@
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	HelloWorld *layer = [HelloWorld node];
+	BlueMarbleScene *layer = [BlueMarbleScene node];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
@@ -36,10 +36,10 @@
 		
 		// create and initialize a Label
 		CCLabel* label = [CCLabel labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64];
-
+		
 		// ask director the the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
-	
+		
 		// position the label on the center of the screen
 		label.position =  ccp( size.width /2 , size.height/2 );
 		
