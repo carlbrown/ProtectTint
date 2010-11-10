@@ -8,14 +8,24 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-
+#import "ShieldSprite.h"
 
 @interface GravityBelt : NSObject {
 	NSMutableArray* ships;
 	CCLayer* layer;
+	NSMutableArray *shields;
+	BOOL blueButtondown;
+	BOOL redButtondown;
+	BOOL greenButtondown;
+	ShieldSprite *currentShield;
 }
 
 @property (nonatomic, retain) NSMutableArray* ships;
+@property (nonatomic, retain) NSMutableArray* shields;
+@property (nonatomic, retain) ShieldSprite *currentShield;
+@property (nonatomic, readwrite) BOOL blueButtondown;
+@property (nonatomic, readwrite) BOOL redButtondown;
+@property (nonatomic, readwrite) BOOL greenButtondown;
 
 -(id)initWithLayer:(CCLayer*)l;
 
@@ -28,5 +38,10 @@
 -(void)removeShip:(id)Ship;
 
 -(BOOL)checkForCollision;
+
+-(void) buttonDownForButton:(NSInteger) button;
+-(void) buttonUpForButton:(NSInteger) button;
+
+-(void) displayShield;
 
 @end

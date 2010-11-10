@@ -10,7 +10,7 @@
 
 @implementation ButtonSprite
 
-@synthesize shield;
+@synthesize gbelt, touchHash;
 
 - (void)onEnter
 {
@@ -38,8 +38,9 @@
 		
 		if(CGRectContainsPoint(rect, wp)) {
 			NSLog(@"Button with tag %d pushed, touch count is %d, %u",self.tag, [touches count], [touch hash]);
-			if (self.shield) {
-				[self.parent addChild:self.shield z:2];
+			if (self.gbelt) {
+				[self.gbelt buttonDownForButton:self.tag];
+				self.touchHash = [touch hash];
 			}
 
 		}
@@ -57,10 +58,10 @@
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	for (UITouch *touch in touches) {
-		NSLog(@"Button with tag %d ended, %u",self.tag, [touch hash]);
-	if (self.shield) {
-		[self.parent removeChild:self.shield cleanup: YES];
-	}
+		if (self.gbelt && touch.hash == self.touchHash) {
+			NSLog(@"Button with tag %d ended, %u",self.tag, [touch hash]);
+			[self.gbelt buttonUpForButton:self.tag];
+		}
 	}
 	
 

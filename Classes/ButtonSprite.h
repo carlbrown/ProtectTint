@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "ShieldSprite.h"
+#import "GravityBelt.h"
 
 @interface ButtonSprite : CCSprite <CCStandardTouchDelegate> {
-	ShieldSprite *shield;
+	GravityBelt *gbelt;
+	NSUInteger touchHash;
 }
 
-@property (nonatomic, retain) ShieldSprite *shield;
+@property (nonatomic, retain) GravityBelt *gbelt;
+@property (nonatomic, assign) NSUInteger touchHash;
 
 @end

@@ -12,7 +12,7 @@
 
 @implementation GravityBelt
 
-@synthesize ships;
+@synthesize ships, shields, blueButtondown, greenButtondown, redButtondown, currentShield;
 
 -(id)initWithLayer:(CCLayer*)l
 {
@@ -21,6 +21,10 @@
 	if(nil != self) {
 		layer = l;
 		ships = [[NSMutableArray alloc] init];
+		blueButtondown=NO;
+		greenButtondown=NO;
+		redButtondown=NO;
+		currentShield=nil;
 	}
 	
 	return self;
@@ -151,6 +155,50 @@
 
 	return NO;
 }
+
+-(void) displayShield {
+	if (self.currentShield) {
+		[layer removeChild:self.currentShield cleanup:YES];
+	}
+	if (self.greenButtondown && !self.blueButtondown && !self.redButtondown) {
+		[self setCurrentShield:[shields objectAtIndex:kCGreenColor]];
+	} else if (!self.greenButtondown && self.blueButtondown && !self.redButtondown) {
+		[self setCurrentShield:[shields objectAtIndex:kCBlueColor]];
+	} else if (!self.greenButtondown && !self.blueButtondown && self.redButtondown) {
+		[self setCurrentShield:[shields objectAtIndex:kCRedColor]];
+	} else if (!self.greenButtondown && self.blueButtondown && self.redButtondown) {
+		[self setCurrentShield:[shields objectAtIndex:kCPurpleColor]];
+	} else if (self.greenButtondown && self.blueButtondown && !self.redButtondown) {
+		[self setCurrentShield:[shields objectAtIndex:kCYellowColor]];
+	} else if (self.greenButtondown && !self.blueButtondown && self.redButtondown) {
+		[self setCurrentShield:[shields objectAtIndex:kCOrangeColor]];
+	} 
+	[layer addChild:self.currentShield];
+}
+
+
+-(void) buttonDownForButton:(NSInteger) button {
+	if (button==kCBlueColor) {
+		self.blueButtondown=YES;
+	} else if (button==kCGreenColor) {
+		self.greenButtondown=YES;
+	} else if (button==kCRedColor) {
+		self.redButtondown=YES;
+	}
+	[self displayShield];
+}
+
+-(void) buttonUpForButton:(NSInteger) button {
+	if (button==kCBlueColor) {
+		self.blueButtondown=NO;
+	} else if (button==kCGreenColor) {
+		self.greenButtondown=NO;
+	} else if (button==kCRedColor) {
+		self.redButtondown=NO;
+	}
+	[self displayShield];	
+}
+
 
 
 @end

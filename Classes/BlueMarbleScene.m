@@ -65,6 +65,9 @@
 		ShieldSprite * blueShield = [ShieldSprite spriteWithFile:@"BlueShield.png"]; [blueShield setTag:(kCShieldOffset + kCBlueColor)];
 		ShieldSprite * redShield = [ShieldSprite spriteWithFile:@"RedShield.png"];[redShield setTag:(kCShieldOffset + kCRedColor)];
 		ShieldSprite * greenShield = [ShieldSprite spriteWithFile:@"GreenShield.png"];[greenShield setTag:(kCShieldOffset + kCGreenColor)];
+		ShieldSprite * purpleShield = [ShieldSprite spriteWithFile:@"PurpleShield.png"];[greenShield setTag:(kCShieldOffset + kCPurpleColor)];
+		ShieldSprite * yellowShield = [ShieldSprite spriteWithFile:@"YellowShield.png"];[greenShield setTag:(kCShieldOffset + kCYellowColor)];
+		ShieldSprite * orangeShield = [ShieldSprite spriteWithFile:@"OrangeShield.png"];[greenShield setTag:(kCShieldOffset + kCOrangeColor)];
 		
 		// ask director the the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
@@ -79,10 +82,9 @@
 		greenShield.position =  ccp( size.width/2 ,  50 /*Button Offset*/ + 48 /*Height of PNG/2 */ );
 		blueShield.position =  ccp( size.width/2 ,  50 /*Button Offset*/ + 48 /*Height of PNG/2 */ );
 		redShield.position =  ccp( size.width/2 ,  50 /*Button Offset*/ + 48 /*Height of PNG/2 */ );
-
-		[blueButton setShield:blueShield];
-		[redButton setShield:redShield];
-		[greenButton setShield:greenShield];
+		purpleShield.position =  ccp( size.width/2 ,  50 /*Button Offset*/ + 48 /*Height of PNG/2 */ );
+		yellowShield.position =  ccp( size.width/2 ,  50 /*Button Offset*/ + 48 /*Height of PNG/2 */ );
+		orangeShield.position =  ccp( size.width/2 ,  50 /*Button Offset*/ + 48 /*Height of PNG/2 */ );
 		
 		/*  Add the Space Ship sprite as a CCSprite
 		*/
@@ -107,6 +109,12 @@
 		[self setRandNumSeed];
 		
 		self.gbelt = [[GravityBelt alloc] initWithLayer:self];
+		
+		[blueButton setGbelt:self.gbelt];
+		[redButton setGbelt:self.gbelt];
+		[greenButton setGbelt:self.gbelt];
+		
+		[self.gbelt setShields:[NSMutableArray arrayWithObjects:blueShield, greenShield, redShield, purpleShield, yellowShield, orangeShield, nil]];
 		[self.gbelt addShip];
 
 
